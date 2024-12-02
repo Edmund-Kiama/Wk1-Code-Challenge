@@ -2,7 +2,7 @@
 const annualNhifDeductionsCalculator = ( grossSalary ) => {
     let nhifDeductions; //initialize nhifDeductions variable
 
-    //assigns value to vvariable nhifDeductions
+    //assigns value to variable nhifDeductions
     if ( grossSalary >= 40000 && grossSalary <= 44999 ) {
         nhifDeductions = 1000;
     } else if ( grossSalary >= 45000 && grossSalary <= 49999 ) {
@@ -47,7 +47,6 @@ const annualTaxCalculator = ( taxableIncome ) => {
     //calculates tax using if statements
     if ( taxableIncome <= 288000 ) {
         tax = (10/100) * taxableIncome;
-        console.log(`tax${tax}`)
     } else if ( taxableIncome > 288000 && taxableIncome <= 388000 ) {
         tax = (25/100) * taxableIncome;
     } else if ( taxableIncome > 388000 && taxableIncome <= 6000000 ) {
@@ -58,8 +57,6 @@ const annualTaxCalculator = ( taxableIncome ) => {
         tax = (35/100) * taxableIncome;
     }
 
-    
-    console.log(typeof(taxableIncome))
     return tax; //returns tax charged
 }
 
@@ -94,4 +91,4 @@ const main = ( basicSalary = 0, benefits = 0 ) =>{
 
 
 //Calls the main function
-main(); //Place variables inside such that it is 'basic salary, benefits'
+main(50000,10000); //Place variables inside such that it is 'basic salary, benefits'

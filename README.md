@@ -1,5 +1,12 @@
 # Wk1-Code-Challenge
 
+This repo contains one folder called 'codeChallenges' and one README.md file.
+Within codeChallenges folder, there are three js files;
+    studentGradeGenerator.js--->code challenge 1
+    speedDetector.js--->code challenge 2
+    netSalaryCalculator.js--->code challenge 3
+The README.md file contains all documentation of the code challenges done, as shown below;
+
 ## Student Grade Generator
 
 A JavaScript program that calculates and assigns a grade based on a student's marks. 
@@ -10,10 +17,10 @@ Accepts marks as input.
 ---> Validates the marks to ensure they are between 0 and 100.
 ---> Assigns grades based on the following criteria:
         A: Marks greater than 79
-        B: Marks between 60 and 79
-        C: Marks between 50 and 59
-        D: Marks between 40 and 49
-        E: Marks less than or equal to 40
+        B: Marks from 60 to 79
+        C: Marks from 50 to 59
+        D: Marks from 40 to 49
+        E: Marks less than 40
 
 ### How It Works
 The program defines a function gradeGenerator that:
@@ -28,7 +35,7 @@ Copy the code into a file named studentGradeGenerator.js.
 Open your terminal and navigate to the directory containing the file.
 Run the program using: ---> 'node studentGradeGenerator.js'
 
-Replace the 50 in the console.log(gradeGenerator(50)); line with any marks you want to test.
+Replace the 50 in the 'console.log(gradeGenerator(50)); line with any marks you want to test.
 
 ### Input Validation
 The program checks the input:
@@ -57,14 +64,14 @@ The program also calculates demerit points for speeds over the limit and indicat
 ### Features
 Determines if the driver is within the speed limit.
 Calculates demerit points for speeds exceeding the limit.
-Checks if demerit points exceed the threshold (12 points), resulting in license suspension.
+Checks if demerit points exceed the threshold (12 points) it results in license suspension.
 
 ### How It Works
 The program defines a function speedDetector that:
---->IAccepts the speed as input.
---->IChecks if the speed is within the limit (70 km/h).
---->IIf over the limit:
-        Calculates demerit points: demerit = (speed - 70) / 5
+--->Accepts the speed as input.
+--->Checks if the speed is within the limit (70 km/h).
+--->If over the limit:
+        Calculates demerit points: demerit = Math.floor((speed - 70) / 5)
         Outputs the demerit points.
         Checks if demerit points exceed 12, and if so, outputs "License suspended".
 
@@ -86,7 +93,7 @@ Speed (km/h)	Output
     50	        Ok
     100         Points: 6
     140	        Points: 14, License suspended
-    70	        Ok
+    70	        0
     80         	Points: 2
 
 ### Notes
@@ -111,7 +118,7 @@ This project calculates an individual's Net Salary in Kenya by:
 #### NSSF Deductions Calculation
     NSSF contributions are calculated as 6% of gross salary, with a maximum limit of KSh 7,000.
 
-#### Income Tax (PAYE) Calculation
+#### Income Tax (PAYEE) Calculation
     Tax rates are applied progressively based on taxable income:
     --->10% for income ≤ 288,000
     --->25% for income between 288,001 and 388,000
@@ -123,22 +130,22 @@ This project calculates an individual's Net Salary in Kenya by:
 
 ### How It Works
 #### Inputs:
-    basicSalary ---> Base pay of the individual.
-    benefits ---> Additional income (e.g., allowances).
+    basicSalary ---> Base pay of the individual. This is set to 0 as default if no input has been provided.
+    benefits ---> Additional income (e.g., allowances). This is set to 0 as default if no input has been provided.
 
 #### Steps:
 --->Calculate Gross Salary: basicSalary + benefits.
 --->Calculate NHIF Deductions based on slabs.
 --->Calculate NSSF Deductions as 6% of gross salary, capped at 7,000.
 --->Calculate Taxable Income: Gross Salary - Total Deductions.
---->Calculate Income Tax (PAYE) based on taxable income.
---->Compute Net Salary: Gross Salary - Total Deductions - PAYE.
+--->Calculate Income Tax (PAYEE) based on taxable income.
+--->Compute Net Salary: Gross Salary - Total Deductions - Tax(PAYEE).
 
 #### Outputs:
     Gross Salary
     Total Deductions (NHIF + NSSF)
     Taxable Income
-    PAYE
+    PAYEE
     Net Salary
 
 #### Functions Used
@@ -161,7 +168,7 @@ Returns
 --->nssfDeductions: The calculated NSSF contribution, capped at 7,000.
 
 ##### annualTaxCalculator
-Calculates the income tax (PAYE) based on the taxable income using progressive tax brackets.
+Calculates the income tax (PAYEE) based on the taxable income using progressive tax brackets.
 
 Parameters  
 --->taxableIncome: The income remaining after NHIF and NSSF deductions.
@@ -212,11 +219,11 @@ Basic Salary: 50,000
 Benefits: 10,000
 
 #### Output:
-Payee: 18000
-NHIF deductions: 1200
-NSSF deductions: 7000
+Payee: 5510
+NHIF deductions: 1300
+NSSF deductions: 3600
 Gross salary: 60000
-Net salary: 33800
+Net salary: 49590
 
 ### Customization
 You can:

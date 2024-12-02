@@ -6,7 +6,7 @@ const speedDetector = ( speed ) => {
     } else { 
         //initialize demerit
         let demerit;
-        demerit = ( speed - 70 ) / 5 //calculate demerit points
+        demerit = Math.floor(( speed - 70 ) / 5) //calculate demerit points
         console.log(`Points: ${demerit}`)
 
         //checks if demerit is over 12
@@ -16,4 +16,4 @@ const speedDetector = ( speed ) => {
     }
 }
 
-speedDetector(100)
+speedDetector(70);
