@@ -71,7 +71,7 @@ The program defines a function called speedDetector that does the following:
 --->It accepts speed as input.
 --->It then checks if the speed is within the limit (70 km/h).
 --->If it's over the limit:
-        It calculates demerit points as: demerit = Math.floor((speed - 70) / 5)
+        It calculates demerit points as: demerit = Math.floor((speed - speedLimit ) / per5KmPerHr)
         It then outputs the demerit points.
         Finally it checks if demerit points exceed 12 and if true, in the console it outputs "License suspended".
 
