@@ -1,7 +1,8 @@
 //speed detector main function
 const speedDetector = ( speed ) => {
-    //checks if speed is at speed limit (70)
-    if ( speed < 70 ) {
+    if ( speed < 0 || !speed ){
+        return console.log("Invalid input. Please try again.")
+    } else if ( speed < 70 ) { //checks if speed is at speed limit (70)
         return console.log('Ok')
     } else { 
         //initialize demerit
@@ -16,4 +17,4 @@ const speedDetector = ( speed ) => {
     }
 }
 
-speedDetector(70);
+speedDetector(100);

@@ -63,32 +63,35 @@ const annualTaxCalculator = ( taxableIncome ) => {
 
 //this is the main function of the file
 const main = ( basicSalary = 0, benefits = 0 ) =>{
-    let grossSalary; //initialize grossSalary variable
+    if ( basicSalary < 0 || benefits < 0 ) {
+        return console.log("Inputs must be a positive number.")
+    } else {
+        let grossSalary; //initialize grossSalary variable
 
-    grossSalary = basicSalary + benefits//formular for getting gross salary
+        grossSalary = basicSalary + benefits//formular for getting gross salary
 
-    let nhifDeductions = annualNhifDeductionsCalculator( grossSalary ); //calls the NHIF function that returns its deductions
-    let nssfDeductions = annualNssfDeductionsCalculator( grossSalary ); //calls the NSSF function that returns its deductions
+        let nhifDeductions = annualNhifDeductionsCalculator( grossSalary ); //calls the NHIF function that returns its deductions
+        let nssfDeductions = annualNssfDeductionsCalculator( grossSalary ); //calls the NSSF function that returns its deductions
 
-    
-    let totalDeductions = nssfDeductions + nhifDeductions; //gets the total deductions
+        
+        let totalDeductions = nssfDeductions + nhifDeductions; //gets the total deductions
 
-    let taxableIncome = grossSalary - totalDeductions; //gets the taxable amount
+        let taxableIncome = grossSalary - totalDeductions; //gets the taxable amount
 
-    let tax = annualTaxCalculator( taxableIncome ); //calls the tax function that returns payee(tax)
+        let tax = annualTaxCalculator( taxableIncome ); //calls the tax function that returns payee(tax)
 
-    let netSalary = grossSalary - totalDeductions - tax; //calculates the net salary
+        let netSalary = grossSalary - totalDeductions - tax; //calculates the net salary
 
-    //Prints to console
-    console.log(`Payee: ${tax}`);
-    console.log(`NHIF deductions: ${nhifDeductions}`);
-    console.log(`NSSF deductions: ${nssfDeductions}`);
-    console.log(`Gross salary: ${grossSalary}`);
-    console.log(`Net salary: ${netSalary}`);
+        //Prints to console
+        console.log(`Payee: ${tax}`);
+        console.log(`NHIF deductions: ${nhifDeductions}`);
+        console.log(`NSSF deductions: ${nssfDeductions}`);
+        console.log(`Gross salary: ${grossSalary}`);
+        console.log(`Net salary: ${netSalary}`);
 
     return tax, nhifDeductions, nssfDeductions, grossSalary, netSalary; //returns all required variables
+    }
 }
 
-
 //Calls the main function
-main(50000,10000); //Place variables inside such that it is 'basic salary, benefits'
+main(50000,-10000); //Place variables inside such that it is 'basic salary, benefits'
