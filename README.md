@@ -86,6 +86,7 @@ If you wanted to test with any speed, you can change the '100' in speedDetector(
 The program checks:
 --->If it is a number above 0
 --->If the input is not empty
+--->If input is a number and not any other values such as strings
 If the checks fail, a console message is provided as 'Invalid input. Please try again.'
 
 ### Example Outputs

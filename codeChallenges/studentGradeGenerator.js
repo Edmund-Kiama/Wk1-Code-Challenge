@@ -2,8 +2,8 @@
 //function that grades the marks
 const gradeGenerator = ( marks ) => {
 
-    //checks is userInput is greater than 0, less than 100 and not empty
-    if( marks < 0 || marks > 100 || !marks ) {
+    //checks is userInput is greater than 0, less than 100, is a number and is not empty
+    if( marks < 0 || marks > 100 || !marks || typeof(marks) !== "number" ) {
         return console.log('Please pick a number between 0 and 100');
     } else {
         let grade; //initialize the grade variable

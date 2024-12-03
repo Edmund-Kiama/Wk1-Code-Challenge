@@ -63,7 +63,8 @@ const annualTaxCalculator = ( taxableIncome ) => {
 
 //this is the main function of the file
 const main = ( basicSalary = 0, benefits = 0 ) =>{
-    if ( basicSalary < 0 || benefits < 0 ) {
+    //validates that basic salary and benefits are positive number and only a number
+    if ( basicSalary < 0 || benefits < 0 || typeof(basicSalary) !== "number" || typeof(benefits) !== "number") {
         return console.log("Inputs must be a positive number.")
     } else {
         let grossSalary; //initialize grossSalary variable

@@ -1,6 +1,7 @@
 //speed detector main function
 const speedDetector = ( speed ) => {
-    if ( speed < 0 || !speed ){
+     //validates that speed is a positive number, speed is a number and that there is an speed has a true value
+    if ( speed < 0 || !speed || typeof(speed) !== "number" ){
         return console.log("Invalid input. Please try again.")
     } else if ( speed < 70 ) { //checks if speed is at speed limit (70)
         return console.log('Ok')
