@@ -1,3 +1,8 @@
+// NOTE: iNSTRUCTIONS TO RUN THE CODE 
+//Go to line 103 to alter basic salary and benefits in main(). This runs the whole code.
+
+
+//The code
 //function that calculate NHIF deductions
 const annualNhifDeductionsCalculator = ( grossSalary ) => {
     let nhifDeductions; //initialize nhifDeductions variable
@@ -84,15 +89,15 @@ const main = ( basicSalary = 0, benefits = 0 ) =>{
         let netSalary = grossSalary - totalDeductions - tax; //calculates the net salary
 
         //Prints to console
-        console.log(`Payee: ${tax}`);
-        console.log(`NHIF deductions: ${nhifDeductions}`);
-        console.log(`NSSF deductions: ${nssfDeductions}`);
-        console.log(`Gross salary: ${grossSalary}`);
-        console.log(`Net salary: ${netSalary}`);
+        console.log(`Payee: ${tax.toFixed(2)}`);
+        console.log(`NHIF deductions: ${nhifDeductions.toFixed(2)}`);
+        console.log(`NSSF deductions: ${nssfDeductions.toFixed(2)}`);
+        console.log(`Gross salary: ${grossSalary.toFixed(2)}`);
+        console.log(`Net salary: ${netSalary.toFixed(2)}`);
 
-    return tax, nhifDeductions, nssfDeductions, grossSalary, netSalary; //returns all required variables
+    return tax.toFixed(2), nhifDeductions.toFixed(2), nssfDeductions.toFixed(2), grossSalary.toFixed(2), netSalary.toFixed(2); //returns all required variables
     }
 }
 
 //Calls the main function
-main(50000,-10000); //Place variables inside such that it is 'basic salary, benefits'
+main(50000,10000); //Place variables inside such that it is 'basic salary, benefits'
