@@ -89,11 +89,14 @@ const main = ( basicSalary = 0, benefits = 0 ) =>{
         let netSalary = grossSalary - totalDeductions - tax; //calculates the net salary
 
         //Prints to console
+        console.log(`Your Basic Salary is ${basicSalary} and benefits are ${benefits}`)
+        console.log(`Net salary: ${netSalary.toFixed(2)}`);
+        console.log(`Gross salary: ${grossSalary.toFixed(2)}`);
         console.log(`Payee: ${tax.toFixed(2)}`);
         console.log(`NHIF deductions: ${nhifDeductions.toFixed(2)}`);
         console.log(`NSSF deductions: ${nssfDeductions.toFixed(2)}`);
-        console.log(`Gross salary: ${grossSalary.toFixed(2)}`);
-        console.log(`Net salary: ${netSalary.toFixed(2)}`);
+        
+        
 
     return tax.toFixed(2), nhifDeductions.toFixed(2), nssfDeductions.toFixed(2), grossSalary.toFixed(2), netSalary.toFixed(2); //returns all required variables
     }
