@@ -8,10 +8,10 @@ const speedDetector = ( speed ) => {
     } else { 
         //initialize demerit
         let demerit;
-        let speedLimit = 70 //sets the speed limit to 70
-        let per5KmPerHr = 5 //for every 5km/hr over 70lm/hr, 1 demerit point is to be awarded
+        let speedLimit = 70; //sets the speed limit to 70
+        let per5KmPerHr = 5; //for every 5km/hr over 70km/hr, 1 demerit point is to be awarded
 
-        demerit = Math.floor(( speed - speedLimit ) / per5KmPerHr) //calculate demerit points
+        demerit = (( speed - speedLimit ) / per5KmPerHr);//calculate demerit points
         console.log(`Points: ${demerit}`)
 
         //checks if demerit is over 12
@@ -21,4 +21,4 @@ const speedDetector = ( speed ) => {
     }
 }
 
-speedDetector(100);
+speedDetector(92);
