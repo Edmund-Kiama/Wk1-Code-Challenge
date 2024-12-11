@@ -3,6 +3,9 @@
 
 
 //The code
+
+const readline = require ('readline-sync');
+
 //function that calculate NHIF deductions
 const annualNhifDeductionsCalculator = ( grossSalary ) => {
     let nhifDeductions; //initialize nhifDeductions variable
@@ -104,5 +107,7 @@ const main = ( basicSalary = 0, benefits = 0 ) =>{
     }
 }
 
+const basicSalary = parseFloat(readline.question('Enter your annual basic salary:'));
+const benefits = parseFloat(readline.question('Enter your annual benefits:'));
 //Calls the main function
 main(50000,'100'); //Place variables inside such that it is 'basic salary, benefits'

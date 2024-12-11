@@ -1,3 +1,4 @@
+const readline = require ('readline-sync');
 //speed detector main function
 const speedDetector = ( speed ) => {
      //validates that speed is a positive number, speed is a number and that there is an speed has a true value
@@ -20,5 +21,7 @@ const speedDetector = ( speed ) => {
         }
     }
 }
+//Prompt user
+const speed = parseFloat(readline.question('Enter speed:'));
 
-speedDetector(92);
+speedDetector(speed);

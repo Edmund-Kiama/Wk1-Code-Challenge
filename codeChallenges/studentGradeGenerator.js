@@ -1,4 +1,4 @@
-
+const readline = require ('readline-sync');
 //function that grades the marks
 const gradeGenerator = ( marks ) => {
 
@@ -25,5 +25,6 @@ const gradeGenerator = ( marks ) => {
     }
 };
 
-console.log(gradeGenerator(50));  
+const marks = parseFloat(readline.question('Enter your marks:'));
+console.log(gradeGenerator(marks));  
  
